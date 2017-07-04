@@ -1,24 +1,22 @@
 import React, {Component, PureComponent} from 'react';
 import {Text, TextInput, View, Button, TouchableHighlight} from 'react-native';
 import globalStyles from './styles';
-import {createStore} from 'redux';
 
 export default class LoginComponent extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: props.username,
-            password: props.password
-        };
-    }
+    state = {
+        name: this.props.username,
+        password: this.props.password,
+        isLoggedIn: this.props.isLoggedIn
+    };
 
     render() {
+        const {username, password, isLoggedIn} = this.state;
         return (
             <View>
                 <Text>Username</Text>
-                <TextInput placeholder={this.state.username}/>
+                <TextInput placeholder={username}/>
                 <Text>Username</Text>
-                <TextInput placeholder={this.state.password}/>
+                <TextInput placeholder={password}/>
                 <TouchableHighlight>
                     <Text>Login</Text>
                 </TouchableHighlight>
