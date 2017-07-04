@@ -14,9 +14,9 @@ export default class LoginComponent extends PureComponent {
         return (
             <View>
                 <Text>Username</Text>
-                <TextInput placeholder={username}/>
-                <Text>Username</Text>
-                <TextInput placeholder={password}/>
+                <TextInput placeholder={'username'}/>
+                <Text>Password</Text>
+                <TextInput placeholder={'password'}/>
                 <TouchableHighlight>
                     <Text>Login</Text>
                 </TouchableHighlight>
