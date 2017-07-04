@@ -1,5 +1,5 @@
 import React, {Component, PureComponent} from 'react';
-import {Text, TextInput, View, Button, TouchableHighlight} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
 import globalStyles from '../styles';
 
 export default class StatusComponent extends PureComponent {

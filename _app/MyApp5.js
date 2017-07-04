@@ -12,8 +12,8 @@ export default class MyApp5 extends PureComponent {
                     Welcome to React Native!
                 </Text>
                 <LoginComponent
-                    username={'my username'}
-                    password={'my password'}
+                    username="my username"
+                    password="my password"
                     isLoggedIn={false}/>
                 <StatusComponent info={'Initial state ...'}/>
             </View>

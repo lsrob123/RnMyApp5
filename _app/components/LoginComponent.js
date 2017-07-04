@@ -1,12 +1,22 @@
 import React, {Component, PureComponent} from 'react';
-import {Text, TextInput, View, Button, TouchableHighlight} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
+import Button from 'react-native-button';
 import globalStyles from '../styles';
 
 export default class LoginComponent extends PureComponent {
     state = {
-        name: this.props.username,
+        username: this.props.username,
         password: this.props.password,
-        isLoggedIn: this.props.isLoggedIn
+        isLoggedIn: this.props.isLoggedIn,
+        nameAndPassword: ''
+    };
+
+    submit = () => {
+        this.setState(previousState => {
+            return {
+                nameAndPassword: '<' + this.state.username + '>' + this.state.password
+            };
+        })
     };
 
     render() {
@@ -14,12 +24,27 @@ export default class LoginComponent extends PureComponent {
         return (
             <View>
                 <Text>Username</Text>
-                <TextInput placeholder={'username'}/>
+                <TextInput
+                    placeholder={'username'}
+                    onChangeText={username => this.setState({username})}
+                    value={this.state.username}/>
                 <Text>Password</Text>
-                <TextInput placeholder={'password'}/>
-                <TouchableHighlight>
-                    <Text>Login</Text>
-                </TouchableHighlight>
+                <TextInput
+                    placeholder={'password'}
+                    onChangeText={password => this.setState({password})}
+                    value={this.state.password}/>
+                <Button
+                    style={{
+                    fontSize: 20,
+                    color: 'green'
+                }}
+                    styleDisabled={{
+                    color: 'red'
+                }}
+                    onPress={() => this.submit()}>
+                    Submit
+                </Button>
+                <Text>{this.state.nameAndPassword}</Text>
             </View>
         );
     }
