@@ -16,7 +16,13 @@ export default class LoginComponent extends PureComponent {
             return {
                 nameAndPassword: '<' + this.state.username + '>' + this.state.password
             };
-        })
+        }, () => {
+            console.log('nameAndPassword: ' + this.state.nameAndPassword);
+            this
+                .props
+                .doThingA(this.state.nameAndPassword);
+        });
+
     };
 
     render() {

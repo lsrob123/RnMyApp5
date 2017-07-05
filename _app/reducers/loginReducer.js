@@ -6,10 +6,9 @@ const loginActions = actionTypes.login;
 export default loginReducer = (reducer = {
     isLoggedIn: false
 }, action) => {
-    console.log('loginReducer state: ' + reducer);
-    console.log('loginReducer action: ' + action);
     switch (action.type) {
         case loginActions.setLoginState:
+            console.log('loginReducer.setLoginState: ' + JSON.stringify(action.payload));
             return {
                 ...reducer,
                 isLoggedIn: action.isLoggedIn

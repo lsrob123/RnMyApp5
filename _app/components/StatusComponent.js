@@ -7,10 +7,14 @@ export default class StatusComponent extends PureComponent {
         info: this.props.info
     };
 
-    render(){
+    componentWillReceiveProps(nextProps) {
+        this.setState({info: nextProps.info});
+    }
+
+    render() {
         return (
             <View>
-                <Text>{this.state.info}</Text> 
+                <Text>{this.state.info}</Text>
             </View>
         );
     }
