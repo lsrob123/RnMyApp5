@@ -10,7 +10,12 @@ export default class MyApp5 extends PureComponent {
             {
                 title: 'Some Page',
                 id: 'somePage'
+            },
+                        {
+                title: 'Some Page Modal',
+                id: 'somePageModal'
             }
+
         ]
     };
 
@@ -29,7 +34,13 @@ export default class MyApp5 extends PureComponent {
                 this
                     .props
                     .navigator
-                    .push({screen: 'SomePage.SomePageContainer'})
+                    .push({screen: 'SomePage.SomePageContainer', animated: false})
+            } else if (event.id == 'somePageModal') {
+                // this is the same id field from the static navigatorButtons definition
+                this
+                    .props
+                    .navigator
+                    .showModal({screen: 'SomePage.SomePageContainer', animated: false})
             }
         }
     }
