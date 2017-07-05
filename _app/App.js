@@ -12,10 +12,10 @@ export default class App {
                 screen: 'MyApp5.FirstScreen', // unique ID registered with Navigation.registerScreen
                 title: 'Navigation', // title of the screen as appears in the nav bar (optional)
                 navigatorStyle: {}, // override the navigator style for the screen, see "Styling the navigator" below (optional)
-                navigatorButtons: {} // override the nav buttons for the screen, see "Adding buttons to the navigator" below (optional)
+                navigatorButtons: {}
             },
             // drawer: { // optional, add this if you want a side menu drawer in your app
-            //  left: { // optional, define if you want a drawer from the left     screen:
+            // left: { // optional, define if you want a drawer from the left     screen:
             // 'example.FirstSideMenu', // unique ID registered with
             // Navigation.registerScreen     passProps: {}, // simple serializable object
             // that will pass as props to all top screens (optional)     },     right: { //
