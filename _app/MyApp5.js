@@ -19,6 +19,11 @@ export default class MyApp5 extends PureComponent {
         ]
     };
 
+    state={
+        ...this.props,
+        pressTime: ''
+    }
+
     constructor(props) {
         super(props);
         this
@@ -50,6 +55,9 @@ export default class MyApp5 extends PureComponent {
             <View style={globalStyles.container}>
                 <Text style={globalStyles.welcome}>
                     Welcome to React Native!
+                </Text>
+                <Text>
+                    {this.state.pressTime}
                 </Text>
                 <LoginContainerEmbedded
                     username="my username"
