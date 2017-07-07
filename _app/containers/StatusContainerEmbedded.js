@@ -11,7 +11,7 @@ import * as actions from '../actions/actions'; // import all actions, which will
 
 function mapStateToProps(globalState) {
   return {
-    info: globalState.doThingsReducer.info,
+    doThingsReducer: globalState.doThingsReducer,
   };
 }
 

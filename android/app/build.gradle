@@ -91,8 +91,13 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.1'
+    buildToolsVersion '25.0.2'
 
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+    
     defaultConfig {
         applicationId "com.myapp5"
         minSdkVersion 16
@@ -134,7 +139,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:25.0.2'
     compile 'com.facebook.react:react-native:+'
     // From node_modules
     compile project(':react-native-navigation')

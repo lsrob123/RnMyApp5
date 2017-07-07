@@ -4,17 +4,21 @@ import globalStyles from '../styles';
 
 export default class StatusComponent extends PureComponent {
     state = {
-        info: this.props.info
+        info: '(n/a)',
+        info2: '(n/a)'
     };
 
     componentWillReceiveProps(nextProps) {
-        this.setState({info: nextProps.info});
+        this.setState({
+            ...nextProps.doThingsReducer
+        }, () => console.log(JSON.stringify(this.state)));
     }
 
     render() {
         return (
             <View>
-                <Text>{this.state.info}</Text>
+                <Text>Info: {this.state.info}</Text>
+                <Text>Info2: {this.state.info2}</Text>
             </View>
         );
     }

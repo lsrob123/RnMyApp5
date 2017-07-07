@@ -4,7 +4,7 @@ const doThingsActions = actionTypes.doThings;
 
 // accepts actions and then updates the partitioned state
 export default doThingsReducer = (reducer = {
-    info: 'Initial info'
+    info: '(info)', info2:'(info2)'
 }, action) => {
     switch (action.type) {
         case doThingsActions.doThingA:
@@ -17,9 +17,10 @@ export default doThingsReducer = (reducer = {
             console.log('doThingsReducer.doThingB: ' + JSON.stringify(action.payload));
             return {
                 ...reducer,
-                info: 'From B: ' + action.payload
+                info2: 'From B: ' + action.payload
             };
         default:
             return reducer;
     }
 };
+
